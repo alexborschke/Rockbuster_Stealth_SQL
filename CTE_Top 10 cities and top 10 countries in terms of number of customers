@@ -1,0 +1,41 @@
+--This SQL query with an CTE returns 10 top cities within 10 top countries--
+
+WITH top_10_countries_CTE (country, number_customers) AS 
+
+--The following CTE selects top 10 countries. The main criteria for the top 10 rating is the total number of customers in each country--
+
+(
+      SELECT D.country, 
+             COUNT(A.customer_id) AS number_customers
+      FROM customer A 
+  
+      INNER JOIN address B ON A.address_id = B.address_id
+      INNER JOIN city C ON B.city_id = C.city_id 
+      INNER JOIN country D ON country_id = D.country_id
+      
+      GROUP BY D.country
+  
+      ORDER BY number_customers DESC
+  
+      LIMIT 10
+) 
+--End of the CTE--
+
+--The following main query returns top 10 cities within top 10 countries--
+
+SELECT B.city, 
+       A.country
+       COUNT(top_10_countries_CTE.customer_id) AS number_customers_in_city
+       
+FROM country A
+
+INNER JOIN city B ON A.country_id = B.country_id
+INNER JOIN address C ON B.city_id = C.city_id
+INNER JOIN customer D ON C.address_id = D.address_id
+LEFT JOIN top_10_countries_CTE ON D.customer_id = top_10_countries_CTE.customer_id
+
+GROUP BY A.country, B.city
+
+ORDER BY top_10_countries_CTE DESC;
+
+
