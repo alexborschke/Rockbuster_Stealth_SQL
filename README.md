@@ -10,5 +10,4 @@ To help the BI department with the launch strategy for the new online video serv
 - To conduct an EDA and describe patterns in the data, such as the average rental rate, revenue, number of active customers, etc.
 - To establish which top 10 countries and cities had the highest number of customers in 2006.
 - To determine the top 10 countries with the highest revenue and the 5 most loyal customers in 2006.
-- To find out which film genres were the most profitable and, hence, popular in 2006.
-- To give recommendations to the BI in connection with the new strategy of the launch of a new online streaming service. 
+
