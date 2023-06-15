@@ -1,0 +1,7 @@
+#Counting the number of active customers of Rockbuster Stealth by using the COUNT function; 
+#An alias 'number_of_customers' was assigned to the result of the COUNT function by using AS;
+#The WHERE function only selects the values that equal 1 from the column 'active'.
+
+SELECT COUNT (active) AS number_of_customers
+FROM customer
+WHERE active = 1
