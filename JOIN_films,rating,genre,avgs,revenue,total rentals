@@ -1,0 +1,21 @@
+--This SQL query with INNER JOIN returns the information about film titles with their genres, ratings, number of rentals, total revenue from--
+--rentals, as well as average rental rate and average rental duration--
+
+SELECT D.title AS film_title,						
+	     F.name AS film_genre,					
+	     D.rating,
+       COUNT(A.rental_id) AS number_rentals,					
+	     SUM(A.amount) AS total_revenue,
+       AVG(D.rental_rate) AS average_rental_rate,
+       AVG(D.rental_duration) AS avg_rental_duration
+
+FROM payment A						
+	    INNER JOIN rental B ON A.rental_id = B.rental_id					
+    	INNER JOIN inventory C ON B.inventory_id = C.inventory_id					
+    	INNER JOIN film D ON C.film_id = D.film_id					
+	    INNER JOIN film_category E ON C.film_id = E.film_id					
+	    INNER JOIN category F ON E.category_id = F.category_id					
+						
+GROUP BY film_title, film_genre, D.rating		
+
+ORDER BY total_revenue DESC;
