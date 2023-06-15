@@ -1,0 +1,36 @@
+--This SQL query with a subquery returns average amount paid by top 5 customers--
+
+SELECT AVG (total_amount_paid) AS average_amount_paid
+FROM 
+    --subquery starts here. This subquery returns top 5 customers from 10 cities with the highest revenue--
+
+    ( 
+       SELECT 
+              B.customer_id,
+              B.first_name,
+              B.last_name,
+              D.city,
+              E.country, 
+              SUM(amount) AS total_amount_paid
+
+      FROM payment
+
+      INNER JOIN customer B ON A.customer_id = B.customer_id
+      INNER JOIN address C ON B.address_id = C.address_id
+      INNER JOIN city D ON C.city_id = D.city_id
+      INNER JOIN country E ON D.country_id = E.country_id
+
+      WHERE city IN (‘Aurora’, ‘Acua’, “Citrus Heights’, ‘Iwaki’, ‘Ambattur’, ‘Shanwei’, ‘So Leopoldo’, ‘Teboksary’, ‘Tianjin’, ‘Cianjur’)
+
+      GROUP BY B.customer_id, B.first_name, B.last_name, D.city, E.country
+      
+      LIMIT 5
+
+     ) --subquery ends here--
+    
+AS total_amount_paid 
+
+
+              
+        
+
