@@ -1,4 +1,5 @@
-#The total amount of revenue from the movie rentals is calculated by the aggregation function SUM; an alias 'total_revenue' was given to the result of the aggregation with the function AS
+#The total amount of revenue from the movie rentals is calculated by the aggregation function SUM; 
+# An alias 'total_revenue' was given to the result of the aggregation with the function AS.
 
 SELECT SUM(amount) AS total_revenue
 FROM payment 
