@@ -11,3 +11,6 @@ To help the BI department with the launch strategy for the new online video serv
 - To establish which top 10 countries and cities had the highest number of customers in 2006.
 - To determine the top 10 countries with the highest revenue and the 5 most loyal customers in 2006.
 
+## Tableau visualizations of the analysis:
+
+[Tableau visualizations for Rockbuster Stealth](https://public.tableau.com/shared/ZQQK3F8FY?:display_count=n&:origin=viz_share_link)
