@@ -13,4 +13,4 @@ To help the BI department with the launch strategy for the new online video serv
 
 ## Tableau visualizations of the analysis:
 
-[Tableau visualizations for Rockbuster Stealth](https://public.tableau.com/shared/ZQQK3F8FY?:display_count=n&:origin=viz_share_link)
+[Tableau visualizations for Rockbuster Stealth](https://public.tableau.com/views/RockbusterStealthOnlineStreamingServiceLaunch/StoryboardRockbuster?:language=en-US&:display_count=n&:origin=viz_share_link)
